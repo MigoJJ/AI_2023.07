@@ -62,7 +62,7 @@ public class EMR_vitalsign extends JFrame {
         desoutputTextArea = new JTextArea();
         desoutputTextArea.setRows(4);
         desoutputTextArea.setColumns(30);
-        desoutputTextArea.setText("at GDS, Right seated position, Regular");
+        desoutputTextArea.setText("at GDS, Left seated position, Regular");
         desoutputTextArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
         JScrollPane scrollPane1 = new JScrollPane(desoutputTextArea);
         add(scrollPane1);
@@ -148,6 +148,13 @@ public class EMR_vitalsign extends JFrame {
     
     public static void descriptionOfVitalSigns(String input) {
     	System.out.println( "Executing descriptionOfVitalSigns method." + input);
+
+    	String dta = desoutputTextArea.getText();
+    	System.out.println( "Executing descriptionOfVitalSigns dta" + dta);
+
+    	
+    	String returndta = EMR_vitalsign_desreturn.main(input, dta);
+        desoutputTextArea.setText(returndta);
     }
     
     public static void main(String[] args) {
